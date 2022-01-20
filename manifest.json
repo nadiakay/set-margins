@@ -1,0 +1,25 @@
+{
+  "name": "Set Margins",
+  "description": "Set margins on webpages",
+  "version": "0.1",
+  "author": "Nadia Konieczny",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "margin.js"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "img/16x16.png",
+      "32": "img/32x32.png",
+      "192": "img/192x192.png"
+    }
+  },
+  "icons": {
+    "16": "img/16x16.png",
+    "32": "img/32x32.png",
+    "192": "img/192x192.png"
+  }
+}
