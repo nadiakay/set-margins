@@ -1,11 +1,14 @@
 let setMarginBtn = document.getElementById("setMarginBtn");
 let inputMargin = document.getElementById("inputMargin");
 
-chrome.storage.sync.set({ margin: 20 });
+const initMargin = 200;
+inputMargin.placeholder = initMargin;
+
+chrome.storage.sync.set({ margin: initMargin });
 
 setMarginBtn.addEventListener("click", async () => {
   let newMargin = inputMargin.value;
-  if (!newMargin) newMargin = 20;
+  if (!newMargin) newMargin = initMargin;
   chrome.storage.sync.set({ margin: newMargin });
 
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -19,7 +22,7 @@ function renderWithMargins() {
   let width = window.innerWidth;
 
   chrome.storage.sync.get("margin", ({ margin }) => {
-    let newWidth = width - margin * 20;
+    let newWidth = width - margin * 2;
     document.body.style.width = newWidth;
     document.body.style.margin = "auto";
   });
