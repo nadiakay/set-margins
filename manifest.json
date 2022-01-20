@@ -1,8 +1,8 @@
 {
   "name": "Set Margins",
-  "description": "Set margins on webpages",
-  "version": "0.1",
-  "author": "Nadia Konieczny",
+  "description": "Set margins on webpages.",
+  "version": "1.0",
+  "author": "Nadia Konieczny <nadiakrakowski@gmail.com> (https://github.com/nadiakay)",
   "manifest_version": 3,
   "background": {
     "service_worker": "margin.js"
